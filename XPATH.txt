@@ -1,0 +1,17 @@
+XPath 
+
+Absolute XPath (Not recommeded) -- /html/body/div[3]/div[2]/div/div/div[2]/div/div/div[1]/form/div[1]/div[7]/span/span[3]/input
+
+Relative XPath --
+//tagname[@attribute='']
+//tagname[text()='']
+
+Contains
+//tagname[contains(@attribute,'')]
+//tagname[contains(text(),'')]
+
+
+Example: to validate it using chrome -- ctrl+f
+//input[@value='-1']
+
+//label[text()='Custom']
