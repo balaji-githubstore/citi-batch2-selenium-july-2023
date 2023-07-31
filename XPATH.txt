@@ -10,8 +10,58 @@ Contains
 //tagname[contains(@attribute,'')]
 //tagname[contains(text(),'')]
 
+Grouping of xpath- starts at 1
+(//div[@class='checkbox-ui'])[2]
+
+upload
+//input[@type='file']
+
 
 Example: to validate it using chrome -- ctrl+f
 //input[@value='-1']
 
 //label[text()='Custom']
+
+//tagname[contains(@attribute,'')]
+
+
+--------------------------------------
+CSS Selector - https://www.w3schools.com/cssref/css_selectors.php
+#id
+.classname
+tagname[attribute='']
+[attribute='']
+
+Example
+#clearPass
+button[type='submit']
+
+
+----------
+admin,pass,OpenEMR
+physician,physician,OpenEMR
+
+
+
+------------------------------
+
+saul,saul123
+kim,kim123
+ken,ken123
+
+
+{{saul,saul123},{kim,kim123},{ken,ken123}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
