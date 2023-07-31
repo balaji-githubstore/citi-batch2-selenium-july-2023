@@ -1,5 +1,8 @@
 package com.citi.utilities;
 
+import java.io.IOException;
+import java.lang.reflect.Method;
+
 import org.testng.annotations.DataProvider;
 
 public class DataUtils {
@@ -16,6 +19,16 @@ public class DataUtils {
 		data[1][1] = "physician";
 		data[1][2] = "OpenEMR";
 
+		return data;
+	}
+	
+	@DataProvider
+	public Object[][] commonDataProvider(Method method) throws IOException
+	{
+		//currentTestMethodName is the sheetname 
+		String currentTestMethodName=method.getName();
+		
+		Object[][] data=ExcelUtils.getSheetIntoTwoDimensionalArray("test_data/OpenEMRData.xlsx", currentTestMethodName);
 		return data;
 	}
 

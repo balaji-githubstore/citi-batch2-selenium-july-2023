@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 public class ZDemo1Test {
 	
 	@DataProvider
-	public String[][] validData()
+	public Object[][] validData()
 	{
-		String[][] data=new String[3][2];
+		Object[][] data=new Object[3][2];
 		//i--> number of test case
 		//j--> number of arguments/parameters
-		data[0][0]="saul";
+		data[0][0]=8787;
 		data[0][1]="saul123";
 		
 		data[1][0]="kim";

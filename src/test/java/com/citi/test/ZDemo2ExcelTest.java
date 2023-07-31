@@ -3,6 +3,7 @@ package com.citi.test;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -20,10 +21,20 @@ public class ZDemo2ExcelTest {
 		
 		XSSFSheet sheet= book.getSheet("validLoginTest");
 		
-		String value= sheet.getRow(0).getCell(0).getStringCellValue();
-		System.out.println(value);
+		int rowCount=sheet.getPhysicalNumberOfRows();
+		int cellCount=sheet.getRow(0).getPhysicalNumberOfCells();
 		
-		//try to write the logic to print all cell value
+		Object[][] data=new Object[rowCount-1][cellCount];
+		
+		DataFormatter format=new DataFormatter();
+		
+		for(int r=1;r<rowCount;r++)
+		{
+			for(int c=0;c<cellCount;c++)
+			{
+				data[r-1][c]=format.formatCellValue(sheet.getRow(r).getCell(c));
+			}
+		}
 		
 		book.close();
 		file.close();
