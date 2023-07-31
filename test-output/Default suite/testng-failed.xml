@@ -6,7 +6,7 @@
       <class name="com.citi.test.LoginTest">
         <methods>
           <include name="teardown"/>
-          <include name="validLoginTest" invocation-numbers="0"/>
+          <include name="validLoginTest"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.citi.test.LoginTest -->

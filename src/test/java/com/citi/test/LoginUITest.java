@@ -8,13 +8,13 @@ import com.citi.base.AutomationWrapper;
 
 public class LoginUITest extends AutomationWrapper {
 
-	@Test
+	@Test(groups = {"UI","smoke"})
 	public void TitleTest() {
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle, "OpenEMR Login");
 	}
 
-	@Test
+	@Test(groups = {"UI"})
 	public void appDescriptionTest() {
 		String actualDesc = driver.findElement(By.xpath("//p[contains(text(),'most')]")).getText();
 		Assert.assertEquals(actualDesc,

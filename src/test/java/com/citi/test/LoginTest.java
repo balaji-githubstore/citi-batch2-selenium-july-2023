@@ -9,7 +9,7 @@ import com.citi.utilities.DataUtils;
 
 public class LoginTest extends AutomationWrapper {
 
-	@Test(dataProvider = "commonDataProvider",dataProviderClass = DataUtils.class)
+	@Test(dataProvider = "commonDataProvider",dataProviderClass = DataUtils.class,groups = {"login","smoke"})
 	public void validLoginTest(String username, String password, String expectedTitle) {
 		driver.findElement(By.id("authUser")).sendKeys(username);
 		driver.findElement(By.cssSelector("#clearPass")).sendKeys(password);
@@ -18,7 +18,7 @@ public class LoginTest extends AutomationWrapper {
 		Assert.assertEquals(driver.getTitle(), expectedTitle);
 	}
 	
-	@Test(dataProvider = "commonDataProvider",dataProviderClass = DataUtils.class)
+	@Test(dataProvider = "commonDataProvider",dataProviderClass = DataUtils.class,groups = {"login"})
 	public void invalidLoginTest(String username, String password, String expectedError)
 	{
 		driver.findElement(By.id("authUser")).sendKeys(username);

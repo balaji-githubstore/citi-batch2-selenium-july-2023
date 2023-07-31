@@ -11,6 +11,22 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * will be deleted later
  */
 public class ZDemo2ExcelTest {
+	
+	public static int aS=10;
+	public int aNS=20;
+	
+	public void m1()
+	{
+		System.out.println(ZDemo2ExcelTest.aS);
+		System.out.println(aNS);
+	}
+	
+	public static void m2()
+	{
+		System.out.println(ZDemo2ExcelTest.aS);
+		ZDemo2ExcelTest obj=new ZDemo2ExcelTest();
+		System.out.println(obj.aNS);
+	}
 
 	public static void main(String[] args) throws IOException {
 		
