@@ -12,16 +12,22 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class PatientSteps  {
+	
+	private AutomationWrapper wrapper;
+
+	public PatientSteps(AutomationWrapper wrapper) {
+		this.wrapper = wrapper;
+	}
 
 	@When("I click on patient menu")
 	public void i_click_on_patient_menu() {
 
-		AutomationWrapper.driver.findElement(By.xpath("//div[text()='Patient']")).click();
+		wrapper.driver.findElement(By.xpath("//div[text()='Patient']")).click();
 	}
 
 	@When("I click on new-search menu")
 	public void i_click_on_new_search_menu() {
-		AutomationWrapper.driver.findElement(By.xpath("//div[text()='New/Search']")).click();
+		wrapper.driver.findElement(By.xpath("//div[text()='New/Search']")).click();
 	}
 
 	@When("I fill the new patient form")
@@ -36,6 +42,9 @@ public class PatientSteps  {
 		System.out.println(list.get(0).get("lastname"));
 		System.out.println(list.get(0).get("gender"));
 		System.out.println(list.get(0).get("dob"));
+		
+		wrapper.driver.switchTo().frame(wrapper.driver.findElement(By.name("pat")));
+		wrapper.driver.findElement(By.id("")).sendKeys(list.get(0).get("firstname"));
 		
 	}
 

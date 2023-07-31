@@ -6,7 +6,7 @@ import io.cucumber.java.After;
 
 public class AutomationWrapper {
 
-	public static WebDriver driver;
+	public WebDriver driver;
 	
 	
 	@After
