@@ -3,20 +3,25 @@ package com.citi.steps;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.By;
+
+import com.citi.base.AutomationWrapper;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class PatientSteps {
+public class PatientSteps  {
 
 	@When("I click on patient menu")
 	public void i_click_on_patient_menu() {
 
+		AutomationWrapper.driver.findElement(By.xpath("//div[text()='Patient']")).click();
 	}
 
 	@When("I click on new-search menu")
 	public void i_click_on_new_search_menu() {
-
+		AutomationWrapper.driver.findElement(By.xpath("//div[text()='New/Search']")).click();
 	}
 
 	@When("I fill the new patient form")
